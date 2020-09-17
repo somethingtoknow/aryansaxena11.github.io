@@ -1,110 +1,17 @@
-
-<!DOCTYPE HTML>  
+<!doctype html>
 <html>
-<head>
-<style>
-.error {color: #FF0000;}
-</style>
-</head>
-<body>  
-
-<?php
-// define variables and set to empty values
-$nameErr = $emailErr = $genderErr = $websiteErr = "";
-$name = $email = $gender = $comment = $website = "";
-
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-  if (empty($_POST["name"])) {
-    $nameErr = "Name is required";
-  } else {
-    $name = test_input($_POST["name"]);
-    // check if name only contains letters and whitespace
-    if (!preg_match("/^[a-zA-Z ]*$/",$name)) {
-      $nameErr = "Only letters and white space allowed";
-    }
-  }
-  
-  if (empty($_POST["email"])) {
-    $emailErr = "Email is required";
-  } else {
-    $email = test_input($_POST["email"]);
-    // check if e-mail address is well-formed
-    if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-      $emailErr = "Invalid email format";
-    }
-  }
-    
-  if (empty($_POST["website"])) {
-    $website = "";
-  } else {
-    $website = test_input($_POST["website"]);
-    // check if URL address syntax is valid (this regular expression also allows dashes in the URL)
-    if (!preg_match("/\b(?:(?:https?|ftp):\/\/|www\.)[-a-z0-9+&@#\/%?=~_|!:,.;]*[-a-z0-9+&@#\/%=~_|]/i",$website)) {
-      $websiteErr = "Invalid URL";
-    }
-  }
-
-  if (empty($_POST["comment"])) {
-    $comment = "";
-  } else {
-    $comment = test_input($_POST["comment"]);
-  }
-
-  if (empty($_POST["gender"])) {
-    $genderErr = "Gender is required";
-  } else {
-    $gender = test_input($_POST["gender"]);
-  }
-}
-
-function test_input($data) {
-  $data = trim($data);
-  $data = stripslashes($data);
-  $data = htmlspecialchars($data);
-  return $data;
-}
-?>
-
-<h2>PHP Form Validation Example</h2>
-<p><span class="error">* required field</span></p>
-<form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">  
-  Name: <input type="text" name="name" value="<?php echo $name;?>">
-  <span class="error">* <?php echo $nameErr;?></span>
-  <br><br>
-  E-mail: <input type="text" name="email" value="<?php echo $email;?>">
-  <span class="error">* <?php echo $emailErr;?></span>
-  <br><br>
-  Website: <input type="text" name="website" value="<?php echo $website;?>">
-  <span class="error"><?php echo $websiteErr;?></span>
-  <br><br>
-  Comment: <textarea name="comment" rows="5" cols="40"><?php echo $comment;?></textarea>
-  <br><br>
-  Gender:
-  <input type="radio" name="gender" <?php if (isset($gender) && $gender=="female") echo "checked";?> value="female">Female
-  <input type="radio" name="gender" <?php if (isset($gender) && $gender=="male") echo "checked";?> value="male">Male
-  <input type="radio" name="gender" <?php if (isset($gender) && $gender=="other") echo "checked";?> value="other">Other  
-  <span class="error">
- </span>
-  <br><br>
-  <input type="submit" name="submit" value="Submit">  
-</form>
-</body>
-</html>
-
-<!--
-<!DOCTYPE html>
-<html>
-<head>
-<title>ARYAN SAXENA</title>
-</head>
-<body>
-
-<h1>Aryan's First GitHub Page</h1>
-<h2>This is my first webpage on public server</h2>
-
-<?php
-echo "My first PHP script!";
-?>
-</body>
-</html>
--->
+<link rel="shortcut icon" href="file:///C:/Users/axsx1_000/Desktop/Web%20files/science%20and%20experiments/logo.icon" />
+<link rel="icon" href="file:///C:/Users/axsx1_000/Desktop/Web%20files/science%20and%20experiments/logo.icon" />
+<aside text align="Right">
+<a target="blank" href="https://mail.google.com/mail/u/0/?view=cm&fs=1&tf=1&source=mailto&to=Aryansaxena11@outlook.com">
+<button>Report a problem</button></a></Aside>
+<Body text align="left">
+<meta name="viewport" content="width=device-width, initial-scale=1.0";>
+<title Text align="center">Science and Experiments</title><h1>Science</h1>
+<h2>Chapter 1</h2>
+<a title="1st subchapter(matters) " target="blank" href="https://drive.google.com/file/d/1uj3Z-yYvj8HxO9rbdAaL78i1MfPYDKt4/view?usp=sharing"><button>Matters </button></a><br><br><br>
+so i hope you all have read the pdf, now we will start with our new subchapter which is...<br><br><br>
+<a title="2nd subchapter(Dew does not fall!!) "  href="https://drive.google.com/file/d/1FUvv1lwsnDhAe__mvnVjRUXw0JFC_laR/view?usp=sharing"><button>Dew dosn't fall!</button>
+</a>
+<BR><BR><BR>
+<a target="blank" title="Experimental day! day 1" href="https://docs.google.com/presentation/d/e/2PACX-1vQD-7MkxfJrUHTzW6EcY_IYIGabpG-Dtd_X8G28Y1Uj13f0ktCCNZ7NO9Nhx9J28l07FzZcX1ADzRx3/pub?start=true&loop=false&delayms=30000"><button>Experimental day! day 1</button>
